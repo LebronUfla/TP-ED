@@ -1,7 +1,7 @@
 #ifndef CAES_H
 #define CAES_H
 
-class caes{
+class noh{
   friend class lista;
 private:
   int id;
@@ -9,27 +9,27 @@ private:
   char caracteriticas[200];
   float altura_media;
   int tempo_medio_de_vida;
-  caes* proximo;
+  noh* proximo;
 public:
-  caes();
-  //~caes();
-  void setId(caes* objeto);
-  void setNome(caes* objeto);
-  void setCaracteriticas(caes* objeto);
-  void setAltura_media(caes* objeto);
-  void setTempo_medio_de_vida(caes* objeto);
+  noh();
+  void setId(noh* objeto);
+  void setNome(noh* objeto);
+  void setCaracteriticas(noh* objeto);
+  void setAltura_media(noh* objeto);
+  void setTempo_medio_de_vida(noh* objeto);
 };
 
 class lista{
 private:
-  caes* primeiro;
-  caes* ultimo;
+  noh* primeiro;
+  noh* ultimo;
   int tamanho;
 public:
   lista();
   ~lista();
-  void insere(caes objeto);
+  void insere(noh objeto);
   void imprime();
+  char menu();
 };
 
 #endif

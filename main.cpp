@@ -3,27 +3,14 @@
 #include "caes.h"
 using namespace std;
 
-char menu(){
-    char resp;
-
-    cout << "***************MENU***************\n\n";
-    cout << "1 - INSERIR CÃO \n";
-    cout << "2 - LISTAR CAES\n";
-    cout << "0 - SAIR\n";
-    cout<<"opcao: ";
-    cin >> resp;
-    return resp;
-
-}
-
 int main() {
 
-    lista minhaLista;
-    caes cao;
+    lista listaCao;
+    noh cao;
     char resp;
 
     while(true){
-        resp = menu();
+        resp = listaCao.menu();
         if(resp == '1'){
 
             cao.setId(&cao);
@@ -31,10 +18,11 @@ int main() {
             cao.setCaracteriticas(&cao);
             cao.setAltura_media(&cao);
             cao.setTempo_medio_de_vida(&cao);
+            listaCao.insere(cao);
 
         }else if(resp == '2'){
 
-            minhaLista.imprime();
+            listaCao.imprime();
 
         }else if(resp == '0'){
 

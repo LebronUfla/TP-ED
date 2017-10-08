@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-caes::caes(){
+noh::noh(){
   id = 0;
 }
 
@@ -14,8 +14,8 @@ lista::lista(){
 }
 
 lista::~lista(){
-  caes* aux = primeiro;
-  caes* temp;
+  noh* aux = primeiro;
+  noh* temp;
 
   while(aux != NULL){
     temp = aux;
@@ -25,32 +25,46 @@ lista::~lista(){
   primeiro = NULL;
   ultimo = NULL;
 }
+//MENU
+char lista::menu(){
+    char resp;
+
+    cout << "***************MENU***************\n\n";
+    cout << "1 - INSERIR CÃO \n";
+    cout << "2 - LISTAR CAES\n";
+    cout << "0 - SAIR\n";
+    cout<<"opcao: ";
+    cin >> resp;
+    return resp;
+
+}
+
 // SET VALORES PARA O OBJETO
-void caes::setId(caes* objeto){
+void noh::setId(noh* objeto){
     cout<<"\nEntre com o ID:  ";
     cin>>objeto->id;
 }
-void caes::setNome(caes* objeto){
+void noh::setNome(noh* objeto){
     cout<<"\nEntre com o Nome do cão: ";
     cin>>objeto->nome;
 }
-void caes::setCaracteriticas(caes* objeto){
+void noh::setCaracteriticas(noh* objeto){
     cout<<"\nEntre com a caracteristica: ";
     cin>>objeto->caracteriticas;
 }
-void caes::setAltura_media(caes* objeto){
+void noh::setAltura_media(noh* objeto){
     cout<<"\nEntre com a altura: ";
     cin>>objeto->altura_media;
 }
-void caes::setTempo_medio_de_vida(caes* objeto){
+void noh::setTempo_medio_de_vida(noh* objeto){
     cout<<"\nEntre com tempo medio de vida: ";
     cin>>objeto->tempo_medio_de_vida;
 }
 
 //INSERE ORDENADO
-void lista::insere(caes objeto){
-    caes* novo = new caes(objeto);
-    caes *aux = primeiro;
+void lista::insere(noh objeto){
+    noh* novo = new noh(objeto);
+    noh* aux = primeiro;
     novo->proximo = NULL;
 
     if(primeiro == NULL){//lista vazia
@@ -77,7 +91,7 @@ void lista::insere(caes objeto){
 }
 
 void lista::imprime(){
-    caes *aux = primeiro;
+    noh* aux = primeiro;
 
     while(aux != NULL){
         cout << " ID: " << aux->id << endl;
