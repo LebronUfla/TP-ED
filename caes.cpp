@@ -24,7 +24,7 @@ lista::~lista(){
   primeiro = NULL;
   ultimo = NULL;
 }
-
+// SET VALORES PARA O OBJETO
 void caes::setId(caes* objeto){
     cout<<"\nEntre com o ID:  ";
     cin>>objeto->id;
@@ -45,7 +45,7 @@ void caes::setTempo_medio_de_vida(caes* objeto){
     cout<<"\nEntre com a altura: ";
     cin>>objeto->tempo_medio_de_vida;
 }
-
+//INSERE ORDENADO
 void Lista::insere(caes objeto){
     caes* novo = new caes(objeto);
     caes *aux = primeiro;
