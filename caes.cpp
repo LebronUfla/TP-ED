@@ -109,19 +109,22 @@ void lista::imprime(){
 void lista::insereArquivo(lista listaCao){
     FILE *arq;
     int result = 0;
+    int cont = 0;
     noh* aux = primeiro;
 
-    arq = fopen("ArqTeste.dat", "wb"); // Cria um arquivo binário para gravação
+    arq = fopen("ArqTeste.bin", "wb"); // Cria um arquivo binário para gravação
 
     if (arq == NULL){ // Se não conseguiu criar
         cout<< "Problemas na CRIACAO do arquivo"<< endl;
         return;
     }
     while(aux != NULL){
-        result = fwrite (aux, sizeof(noh), listaCao.tamanho, arq);
+        result = fwrite (aux, sizeof(noh), 1, arq);
+        cont += result;
         aux = aux->proximo;
+
     }
-    cout<<"nro de elementos gravados: " << result << endl;
+    cout<<"nro de elementos gravados: " << cont << endl;
     fclose(arq);
 }
 
@@ -132,7 +135,7 @@ void lista::lerArquivo(lista listacao){
     noh vetor[listacao.tamanho];
 
   // Abre um arquivo BINÁRIO para LEITURA
-    arq = fopen("ArqTeste.dat", "rb");
+    arq = fopen("ArqTeste.bin", "rb");
     if (arq == NULL){  // Se houve erro na abertura
         cout << "Problemas na abertura do arquivo" << endl;
         return;
