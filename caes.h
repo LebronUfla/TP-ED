@@ -11,7 +11,13 @@ private:
   int tempo_medio_de_vida;
   caes* proximo;
 public:
-  //metodos
+  caes();
+  ~caes();
+  void setId(caes* objeto);
+  void setNome(caes* objeto);
+  void setCaracteriticas(caes* objeto);
+  void setAltura_media(caes* objeto);
+  void setTempo_medio_de_vida(caes* objeto);
 };
 
 class lista{
@@ -20,7 +26,10 @@ private:
   caes* ultimo;
   int tamanho;
 public:
-  //metodos
+  lista();
+  ~lista();
+  void insere(caes objeto);
+  void imprime(caes objeto);
 };
 
 #endif
