@@ -1,6 +1,8 @@
 #include <cstdlib>
 #include <iostream>
+#include <stdio.h>
 #include "caes.h"
+
 using namespace std;
 
 int main() {
