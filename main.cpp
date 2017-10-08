@@ -29,6 +29,10 @@ int main() {
             cout << "bye\n";
             break;
 
+        }else if(resp == '3'){
+            listaCao.insereArquivo(listaCao);
+        }else if(resp == '4'){
+            listaCao.lerArquivo(listaCao);
         }else{
             cout<<"opcao invalida";
         }

@@ -30,6 +30,8 @@ public:
   void insere(noh objeto);
   void imprime();
   char menu();
+  void insereArquivo(lista listaCao);
+  void lerArquivo(lista listacao);
 };
 
 #endif

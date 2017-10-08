@@ -32,6 +32,8 @@ char lista::menu(){
     cout << "***************MENU***************\n\n";
     cout << "1 - INSERIR CÃO \n";
     cout << "2 - LISTAR CAES\n";
+    cout << "3 - GRAVAR ARQUIVO\n";
+    cout << "4 - LER ARQUIVO\n";
     cout << "0 - SAIR\n";
     cout<<"opcao: ";
     cin >> resp;
@@ -102,4 +104,47 @@ void lista::imprime(){
 
         aux = aux->proximo;
     }
+}
+void lista::insereArquivo(lista listaCao){
+    FILE *arq;
+    int result;
+    noh* aux = primeiro;
+
+    arq = fopen("ArqTeste.dat", "wb"); // Cria um arquivo binário para gravação
+
+    if (arq == NULL){ // Se não conseguiu criar
+        cout<< "Problemas na CRIACAO do arquivo"<< endl;
+        return;
+    }
+    while(aux != NULL){
+        result = fwrite (aux, sizeof(noh), listaCao.tamanho, arq);
+        aux = aux->proximo;
+    }
+    cout<<"nro de elementos gravados: " << result;
+    fclose(arq);
+}
+
+void lista::lerArquivo(lista listacao){
+    FILE *arq;
+    int result;
+    int i = 0;
+    noh* aux = primeiro;
+    noh vetor[listacao.tamanho];
+
+  // Abre um arquivo BINÁRIO para LEITURA
+    arq = fopen("ArqTeste.dat", "rb");
+    if (arq == NULL){  // Se houve erro na abertura
+        printf("Problemas na abertura do arquivo\n");
+        return;
+    }
+
+    result = fread (&vetor, sizeof(noh), listacao.tamanho, arq);
+    printf("Nro de elementos lidos: %d\n", result);
+
+    for (i=0; i<result; i++){
+      cout << "ID: " << vetor[i].id << endl;
+      cout<< "NOME: " << vetor[i].nome << endl;
+    }
+
+    fclose(arq);
 }
