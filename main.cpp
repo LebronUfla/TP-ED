@@ -1,6 +1,7 @@
 #include <cstdlib>
 #include <iostream>
 #include "caes.h"
+using namespace std;
 
 char menu(){
     char resp;
@@ -17,7 +18,7 @@ char menu(){
 
 int main() {
 
-	  lista minhaLista;
+    lista minhaLista;
     caes cao;
     char resp;
 
@@ -33,7 +34,7 @@ int main() {
 
         }else if(resp == '2'){
 
-            cao.imprime();
+            minhaLista.imprime();
 
         }else if(resp == '0'){
 

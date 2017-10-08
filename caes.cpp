@@ -1,6 +1,7 @@
 #include "caes.h"
 #include <cstdlib>
 #include <iostream>
+using namespace std;
 
 caes::caes(){
   id = 0;
@@ -42,11 +43,12 @@ void caes::setAltura_media(caes* objeto){
     cin>>objeto->altura_media;
 }
 void caes::setTempo_medio_de_vida(caes* objeto){
-    cout<<"\nEntre com a altura: ";
+    cout<<"\nEntre com tempo medio de vida: ";
     cin>>objeto->tempo_medio_de_vida;
 }
+
 //INSERE ORDENADO
-void Lista::insere(caes objeto){
+void lista::insere(caes objeto){
     caes* novo = new caes(objeto);
     caes *aux = primeiro;
     novo->proximo = NULL;
@@ -74,7 +76,7 @@ void Lista::insere(caes objeto){
     tamanho++;
 }
 
-void Lista::imprime(){
+void lista::imprime(){
     caes *aux = primeiro;
 
     while(aux != NULL){

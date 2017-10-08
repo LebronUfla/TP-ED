@@ -12,7 +12,7 @@ private:
   caes* proximo;
 public:
   caes();
-  ~caes();
+  //~caes();
   void setId(caes* objeto);
   void setNome(caes* objeto);
   void setCaracteriticas(caes* objeto);
@@ -29,7 +29,7 @@ public:
   lista();
   ~lista();
   void insere(caes objeto);
-  void imprime(caes objeto);
+  void imprime();
 };
 
 #endif
