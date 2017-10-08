@@ -32,9 +32,9 @@ int main() {
             break;
 
         }else if(resp == '3'){
-            listaCao.insereArquivo(listaCao);
+            listaCao.insereArquivoCpp(listaCao);
         }else if(resp == '4'){
-            listaCao.lerArquivo(listaCao);
+            listaCao.lerArquivoCpp(listaCao);
         }else{
             cout<<"opcao invalida";
         }

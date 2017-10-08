@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <iostream>
 #include<stdio.h>
+#include<fstream>
 using namespace std;
 
 noh::noh(){
@@ -150,4 +151,39 @@ void lista::lerArquivo(lista listacao){
     }
 
     fclose(arq);
+}
+
+void lista::insereArquivoCpp(lista listacao){
+    noh* aux = primeiro;
+
+    ofstream saida("teste.txt", ios::binary);
+    while(aux != NULL){
+        saida.write((const char *) (&aux), sizeof(noh));
+        aux = aux->proximo;
+    }
+    saida.close();
+
+}
+
+void lista::lerArquivoCpp(lista listacao){
+    noh* aux = primeiro;
+    int cont = listacao.tamanho;
+    int i = 0;
+
+    ifstream saida("teste.txt", ios::binary);
+
+    //saida.read((char *) (&aux), sizeof(noh));
+
+    while(aux != NULL){
+      saida.read((char *) (&aux), sizeof(noh));
+      cout << "\nID: " << aux->id<< endl;
+      cout<< "NOME: " << aux->nome << endl;
+      cout<< "CARACTERISTICAS: " << aux->caracteriticas<< endl;
+      cout<< "ALTURA MEDIA: " << aux->altura_media << endl;
+      cout<< "TEMPO MEDIO DE VIDA: " << aux->tempo_medio_de_vida << endl;
+      aux = aux->proximo;
+    }
+
+    saida.close();
+
 }

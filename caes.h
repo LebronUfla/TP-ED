@@ -32,6 +32,8 @@ public:
   char menu();
   void insereArquivo(lista listaCao);
   void lerArquivo(lista listacao);
+  void insereArquivoCpp(lista listacao);
+  void lerArquivoCpp(lista listacao);
 };
 
 #endif
